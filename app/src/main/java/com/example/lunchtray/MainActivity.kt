@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             LunchTrayTheme {
 
-                BaseMenuScreen(
+                EntreeMenuScreen(
                     options = DataSource.entreeMenuItem,
                     onCancelButtonClicked = {},
                     onNextButtonClicked = {},
