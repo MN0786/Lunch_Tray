@@ -77,8 +77,8 @@ class OrderViewmodel: ViewModel() {
         }
     }
 
-    fun Double.formatPrice(): String {
-        return NumberFormat.getCurrencyInstance().format(this)
-    }
 
+}
+fun Double.formatPrice(): String {
+    return NumberFormat.getCurrencyInstance().format(this)
 }
