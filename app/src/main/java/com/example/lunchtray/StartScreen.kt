@@ -2,8 +2,6 @@ package com.example.lunchtray
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -15,7 +13,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun StartScreen(modifier : Modifier = Modifier){
+fun StartScreen(
+    onStartButtonClicked : ()->Unit,
+    modifier : Modifier = Modifier
+){
 
     Column(
         modifier = modifier,
@@ -23,13 +24,9 @@ fun StartScreen(modifier : Modifier = Modifier){
         horizontalAlignment = Alignment.CenterHorizontally,
         ){
 
-        Row(
-            verticalAlignment = Alignment.CenterVertically
-            ){
-            Button(
-                onClick = {
 
-                }
+            Button(
+                onClick = onStartButtonClicked
             ){
                 Text(
                     text = stringResource(R.string.start),
@@ -46,9 +43,11 @@ fun StartScreen(modifier : Modifier = Modifier){
 
     }
 
-}
+
 @Preview
 @Composable
 fun StartScreenPreview(){
-    StartScreen(modifier = Modifier.fillMaxSize())
+    StartScreen(
+        onStartButtonClicked = {}
+        )
 }
